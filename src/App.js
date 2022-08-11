@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+
+import Images from './pages/Images';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Sheets from './pages/Sheets';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BrowserRouter>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/images">Images</Link>
+            </li>
+            <li>
+              <Link to="/sheets">Sheets</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
-    </div>
+
+      <main>
+        <Routes>
+          <Route exact replace path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/images" element={<Images />} />
+          <Route path="/sheets" element={<Sheets />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+
+      <footer>&copy; File Upload Code Challenge</footer>
+    </BrowserRouter>
   );
 }
 
