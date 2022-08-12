@@ -49,7 +49,7 @@ function Upload(
   };
 
   return (
-    <div>
+    <article>
       <h2>{title}</h2>
       <form onSubmit={handleOnSubmit}>
         <input
@@ -63,7 +63,7 @@ function Upload(
         </button>
       </form>
       {error ? <p className="error-text">{error}</p> : null}
-    </div>
+    </article>
   );
 }
 

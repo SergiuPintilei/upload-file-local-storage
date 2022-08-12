@@ -4,9 +4,9 @@ import { navLinkStyleFn } from '../utils/linkStyle';
 
 export default function Home() {
   return (
-    <div>
+    <section>
       <h1>Home</h1>
-      <div>
+      <nav>
         <NavLink to="/home/upload/images" style={navLinkStyleFn}>
           images
         </NavLink>
@@ -14,9 +14,9 @@ export default function Home() {
         <NavLink to="/home/upload/sheets" style={navLinkStyleFn}>
           sheets
         </NavLink>
-      </div>
+      </nav>
 
       <Outlet />
-    </div>
+    </section>
   );
 }

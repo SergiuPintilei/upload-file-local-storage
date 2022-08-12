@@ -25,24 +25,25 @@ export default function Images() {
   const src = (images[selectedIndex] && images[selectedIndex].dataUrl) || '';
   const fileName =
     (images[selectedIndex] && images[selectedIndex].fileName) || 'preview';
+
   return (
-    <div>
+    <section>
       <h1>Images</h1>
       {src ? (
-        <div className="images__wrap">
+        <article className="images__wrap">
           <button data-cy="prev-btn" onClick={goBack}>
             &#8678;
           </button>
-          <div className="images__img-wrap">
+          <figure className="images__img-wrap">
             <img className="images__img" alt={fileName} src={src} />
-          </div>
+          </figure>
           <button data-cy="next-btn" onClick={goForward}>
             &#8680;
           </button>
-        </div>
+        </article>
       ) : (
         <p>There are no uploaded images</p>
       )}
-    </div>
+    </section>
   );
 }

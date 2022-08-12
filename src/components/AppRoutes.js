@@ -1,9 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Images from '../pages/Images';
-import Home from '../pages/Home';
-import NotFound from '../pages/NotFound';
-import Sheets from '../pages/Sheets';
+import { Home, Images, NotFound, Sheets } from '../pages';
 
 import ImageUpload from './ImageUpload';
 import SheetUpload from './SheetUpload';

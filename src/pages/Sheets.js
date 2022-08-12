@@ -13,7 +13,7 @@ export default function Sheets() {
   }, []);
 
   return (
-    <div>
+    <section>
       <h1>Sheets</h1>
 
       {sheetArray.length ? (
@@ -38,6 +38,6 @@ export default function Sheets() {
       ) : (
         <p>There are no uploaded csv files</p>
       )}
-    </div>
+    </section>
   );
 }
