@@ -49,12 +49,16 @@ export default function ImageUpload() {
           accept=".png"
           onChange={(e) => handleChange(e, 'image/png')}
         />
-        <button data-cy="image-submit" disabled={!file}>
+        <button
+          className="btn--primary"
+          data-cy="image-submit"
+          disabled={!file}
+        >
           Upload
         </button>
       </form>
       {error ? (
-        <p style={{ color: 'palevioletred' }}>
+        <p className="error-text">
           Incorrect file format. Please upload a .png file.
         </p>
       ) : null}

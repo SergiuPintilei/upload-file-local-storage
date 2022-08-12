@@ -1,0 +1,19 @@
+.images__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.images__img-wrap {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images__img {
+  max-width: 100%;
+  max-height: 100%;
+}

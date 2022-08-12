@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+
 import { getAllImages } from '../utils/api';
+
+import './Images.css';
 
 export default function Images() {
   const [images, setImages] = useState([]);
@@ -26,31 +29,16 @@ export default function Images() {
     <div>
       <h1>Images</h1>
       {src ? (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '1rem',
-          }}
-        >
-          <button onClick={goBack}>&#8678;</button>
-          <div
-            style={{
-              width: '300px',
-              height: '300px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <img
-              style={{ maxWidth: '100%', maxHeight: '100%' }}
-              alt={fileName}
-              src={src}
-            />
+        <div className="images__wrap">
+          <button data-cy="prev-btn" onClick={goBack}>
+            &#8678;
+          </button>
+          <div className="images__img-wrap">
+            <img className="images__img" alt={fileName} src={src} />
           </div>
-          <button onClick={goForward}>&#8680;</button>
+          <button data-cy="next-btn" onClick={goForward}>
+            &#8680;
+          </button>
         </div>
       ) : (
         <p>There are no uploaded images</p>

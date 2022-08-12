@@ -36,6 +36,18 @@ p {
   margin: 0;
 }
 
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: cornflowerblue;
+  color: white;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -77,4 +89,13 @@ td {
 footer {
   padding: 1rem;
   text-align: center;
+}
+
+/* utils */
+.u-ml-auto {
+  margin-left: auto;
+}
+
+.error-text {
+  color: palevioletred;
 }

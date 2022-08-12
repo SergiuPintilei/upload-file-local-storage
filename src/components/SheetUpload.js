@@ -73,11 +73,11 @@ export default function SheetUpload() {
           accept=".csv"
           onChange={(e) => handleChange(e, 'text/csv')}
         />
-        <button data-cy="csv-submit" disabled={!file}>
+        <button className="btn--primary" data-cy="csv-submit" disabled={!file}>
           Upload
         </button>
       </form>
-      {error ? <p style={{ color: 'palevioletred' }}>{error}</p> : null}
+      {error ? <p className="error-text">{error}</p> : null}
     </div>
   );
 }
