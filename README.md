@@ -21,7 +21,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run e2e`
 
-Launches cypress test runner.
+Launches cypress test runner. In the opened app, click on "E2E Testing" and then click on "Chrome" and then click on "Start E2E Testing in Chrome". Click on each item in specs to run it.
 
 ### `npm run build`
 
