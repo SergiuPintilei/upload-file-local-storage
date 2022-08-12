@@ -44,11 +44,14 @@ export default function ImageUpload() {
       <h2>Upload Images</h2>
       <form onSubmit={handleOnSubmit}>
         <input
+          data-cy="image-upload"
           type="file"
           accept=".png"
           onChange={(e) => handleChange(e, 'image/png')}
         />
-        <button disabled={!file}>Upload</button>
+        <button data-cy="image-submit" disabled={!file}>
+          Upload
+        </button>
       </form>
       {error ? (
         <p style={{ color: 'palevioletred' }}>

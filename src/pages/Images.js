@@ -20,6 +20,8 @@ export default function Images() {
     setSelectedIndex((prev) => (prev + 1 > images.length - 1 ? 0 : prev + 1));
 
   const src = (images[selectedIndex] && images[selectedIndex].dataUrl) || '';
+  const fileName =
+    (images[selectedIndex] && images[selectedIndex].fileName) || 'preview';
   return (
     <div>
       <h1>Images</h1>
@@ -44,7 +46,7 @@ export default function Images() {
           >
             <img
               style={{ maxWidth: '100%', maxHeight: '100%' }}
-              alt="preview"
+              alt={fileName}
               src={src}
             />
           </div>

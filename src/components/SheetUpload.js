@@ -58,14 +58,19 @@ export default function SheetUpload() {
       </h2>
       <form onSubmit={handleOnSubmit}>
         <input
+          data-cy="csv-upload"
           type="file"
           accept=".csv"
           onChange={(e) => handleChange(e, 'text/csv')}
         />
-        <button disabled={!file}>Upload</button>
+        <button data-cy="csv-submit" disabled={!file}>
+          Upload
+        </button>
       </form>
       {error ? (
-        <p style={{ color: 'palevioletred' }}>Incorrect file format. Please upload a .csv file.</p>
+        <p style={{ color: 'palevioletred' }}>
+          Incorrect file format. Please upload a .csv file.
+        </p>
       ) : null}
     </div>
   );

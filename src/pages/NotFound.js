@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div>
       <h1>Not Found</h1>
-      <Link to="/home">Go home</Link>
+      <Link to="/home/upload/images">Go home</Link>
     </div>
   );
 }
