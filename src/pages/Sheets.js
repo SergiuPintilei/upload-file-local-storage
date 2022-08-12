@@ -12,10 +12,6 @@ export default function Sheets() {
     }
   }, []);
 
-  const getTotal = (array) => {
-    return array.map((item) => Object.values(item).map((val) => val));
-  };
-
   return (
     <div>
       <h1>Sheets</h1>
@@ -33,7 +29,7 @@ export default function Sheets() {
               return (
                 <tr key={csvItem.fileName}>
                   <td>{csvItem.fileName}</td>
-                  <td>{getTotal(csvItem.array)}</td>
+                  <td>{csvItem.total}</td>
                 </tr>
               );
             })}

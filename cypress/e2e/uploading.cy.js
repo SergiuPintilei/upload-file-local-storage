@@ -25,12 +25,24 @@ describe('uploading', () => {
     it('csv file', () => {
       cy.visit('http://localhost:3000/home/upload/sheets');
 
-      cy.get('[data-cy="csv-upload"]').attachFile('cars.csv');
+      cy.get('[data-cy="csv-upload"]').attachFile('correctOne.csv');
 
       cy.get('[data-cy="csv-submit"]').click();
 
       cy.url().should('include', '/sheets');
-      cy.contains('cars.csv');
+      cy.contains('120');
+    });
+
+    it('shows error for bad format', () => {
+      cy.visit('http://localhost:3000/home/upload/sheets');
+
+      cy.get('[data-cy="csv-upload"]').attachFile('cars.csv');
+      cy.get('[data-cy="csv-submit"]').click();
+
+      cy.contains(
+        'Incorrect file structure. Your .csv file should have only one column named "Total".'
+      );
+      cy.get('[data-cy="csv-submit"]').should('be.disabled');
     });
 
     it('shows error for jpg file', () => {
