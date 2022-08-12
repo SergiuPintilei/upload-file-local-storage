@@ -9,10 +9,10 @@ export default function Images() {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
-    const imgSrc = getAllImages();
-    if (imgSrc && imgSrc.length) {
-      setImages(imgSrc);
-      setSelectedIndex(imgSrc.length - 1);
+    const imageArray = getAllImages();
+    if (imageArray && imageArray.length) {
+      setImages(imageArray);
+      setSelectedIndex(imageArray.length - 1);
     }
   }, []);
 
