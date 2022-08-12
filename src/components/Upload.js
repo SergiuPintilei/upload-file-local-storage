@@ -52,8 +52,10 @@ function Upload(
     <article>
       <h2>{title}</h2>
       <form onSubmit={handleOnSubmit}>
+        <label for="file">Pick a file</label>
         <input
           data-cy="upload"
+          id="file"
           type="file"
           accept={fileType}
           onChange={handleChange}

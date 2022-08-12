@@ -25,15 +25,19 @@ h2 {
 
 a {
   text-decoration: none;
-  color: cornflowerblue;
+  color: #3b578b;
 }
 
 a:visited {
-  color: cornflowerblue;
+  color: #3b578b;
 }
 
 p {
   margin: 0;
+}
+
+label {
+  display: block;
 }
 
 button {
