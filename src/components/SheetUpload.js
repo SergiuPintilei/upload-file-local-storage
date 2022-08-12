@@ -17,7 +17,7 @@ export default function SheetUpload() {
   const navigate = useNavigate();
   const uploadRef = useRef();
 
-  const csvFileToArray = (fileName, string) => {
+  const handleOnLoad = (fileName, string) => {
     const csvHeader = string.slice(0, string.indexOf('\n')).split(',');
     if (csvHeader && csvHeader.length > 1) {
       uploadRef.current.handleValidate('incorrectFileStructure');
@@ -53,7 +53,7 @@ export default function SheetUpload() {
       acceptedFileType="text/csv"
       errors={errors}
       fileReaderMethod="readAsText"
-      onLoad={csvFileToArray}
+      onLoad={handleOnLoad}
     />
   );
 }

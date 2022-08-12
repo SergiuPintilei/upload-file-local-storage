@@ -6,7 +6,7 @@ import Upload from './Upload';
 export default function ImageUpload() {
   const navigate = useNavigate();
 
-  const dataUrlToArray = (fileName, dataUrl) => {
+  const handleOnLoad = (fileName, dataUrl) => {
     const array = getAllImages();
     array.push({ fileName, dataUrl });
     setImages(array);
@@ -14,5 +14,5 @@ export default function ImageUpload() {
     navigate('/images', { replace: true });
   };
 
-  return <Upload onLoad={dataUrlToArray} />;
+  return <Upload onLoad={handleOnLoad} />;
 }
