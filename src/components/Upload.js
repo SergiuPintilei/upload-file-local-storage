@@ -52,19 +52,29 @@ function Upload(
     <article>
       <h2>{title}</h2>
       <form onSubmit={handleOnSubmit}>
-        <label for="file">Pick a file</label>
+        <label htmlFor="file">Pick a file</label>
         <input
           data-cy="upload"
+          data-testid="upload"
           id="file"
           type="file"
           accept={fileType}
           onChange={handleChange}
         />
-        <button className="btn--primary" data-cy="submit" disabled={!file}>
+        <button
+          className="btn--primary"
+          data-cy="submit"
+          data-testid="submit"
+          disabled={!file}
+        >
           Upload
         </button>
       </form>
-      {error ? <p className="error-text">{error}</p> : null}
+      {error ? (
+        <p data-testid="error-text" className="error-text">
+          {error}
+        </p>
+      ) : null}
     </article>
   );
 }

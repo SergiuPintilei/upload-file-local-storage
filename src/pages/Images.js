@@ -35,7 +35,12 @@ export default function Images() {
             &#8678;
           </button>
           <figure className="images__img-wrap">
-            <img className="images__img" alt={fileName} src={src} />
+            <img
+              className="images__img"
+              data-testid={fileName}
+              alt={fileName}
+              src={src}
+            />
           </figure>
           <button data-cy="next-btn" onClick={goForward}>
             &#8680;
